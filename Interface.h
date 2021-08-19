@@ -23,20 +23,20 @@
 
 class Interface {
 public:
-    Interface();
-    Interface(const Interface& orig);
-    virtual ~Interface();
-    bool Init();
-    void Run();
-    void Render(unsigned char *);
+	Interface();
+	Interface(const Interface& orig);
+	virtual ~Interface();
+	bool Init();
+	void Run();
+	void Render(unsigned char *);
 private:
-    int screen_w=640,screen_h=480;
-    const int pixel_w=640,pixel_h=480;
-    SDL_Window *screen; 
+	int screen_w=640,screen_h=480;
+	const int pixel_w=640,pixel_h=480;
+	SDL_Window *screen; 
 	SDL_Renderer* sdlRenderer;
 	Uint32 pixformat= SDL_PIXELFORMAT_IYUV; //IYUV: Y + U + V  (3 planes) or YV12: Y + V + U  (3 planes)
-    SDL_Texture* sdlTexture;
-    SDL_Rect sdlRect;  
+	SDL_Texture* sdlTexture;
+	SDL_Rect sdlRect;  
 
 };
 
