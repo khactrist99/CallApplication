@@ -29,6 +29,7 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>Capture.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -37,6 +38,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>Capture.cpp</itemPath>
       <itemPath>client.cpp</itemPath>
       <itemPath>server.cpp</itemPath>
       <itemPath>video_player.cpp</itemPath>
@@ -86,6 +88,10 @@
       <item path=".vscode/settings.json" ex="false" tool="3" flavor2="0">
       </item>
       <item path=".vscode/tasks.json" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Capture.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Capture.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Makefile" ex="false" tool="3" flavor2="0">
       </item>
@@ -139,6 +145,10 @@
       <item path=".vscode/settings.json" ex="false" tool="3" flavor2="0">
       </item>
       <item path=".vscode/tasks.json" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Capture.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Capture.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Makefile" ex="false" tool="3" flavor2="0">
       </item>
