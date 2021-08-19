@@ -36,6 +36,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/Capture.o \
+	${OBJECTDIR}/Interface.o \
 	${OBJECTDIR}/Network.o \
 	${OBJECTDIR}/client.o \
 	${OBJECTDIR}/mediaPlayer.o \
@@ -72,6 +73,11 @@ ${OBJECTDIR}/Capture.o: Capture.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Capture.o Capture.cpp
+
+${OBJECTDIR}/Interface.o: Interface.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Interface.o Interface.cpp
 
 ${OBJECTDIR}/Network.o: Network.cpp
 	${MKDIR} -p ${OBJECTDIR}
