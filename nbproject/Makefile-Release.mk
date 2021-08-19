@@ -35,7 +35,10 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/Network.o \
 	${OBJECTDIR}/client.o \
+	${OBJECTDIR}/mediaPlayer.o \
+	${OBJECTDIR}/my_avutil.o \
 	${OBJECTDIR}/server.o \
 	${OBJECTDIR}/video_player.o
 
@@ -64,10 +67,25 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/callapplication: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/callapplication ${OBJECTFILES} ${LDLIBSOPTIONS}
 
+${OBJECTDIR}/Network.o: Network.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Network.o Network.cpp
+
 ${OBJECTDIR}/client.o: client.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/client.o client.cpp
+
+${OBJECTDIR}/mediaPlayer.o: mediaPlayer.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/mediaPlayer.o mediaPlayer.cpp
+
+${OBJECTDIR}/my_avutil.o: my_avutil.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/my_avutil.o my_avutil.cpp
 
 ${OBJECTDIR}/server.o: server.cpp
 	${MKDIR} -p ${OBJECTDIR}
