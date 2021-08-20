@@ -74,7 +74,7 @@ void Network::send(unsigned char * data, int data_size) {
     int offset = 0;
     int remain = data_size;
     int n = 0;
-    data[-NB_FLAG] = VIDEO << 14 | n; 
+    data[-NB_FLAG] = VIDEO; 
     while ((remain > 0) && ((bytes_sent = sendto(sockfd, data + offset - NB_FLAG, 
             std::min(remain + NB_FLAG, MAXLINE), MSG_CONFIRM, (struct sockaddr *) &server_addr, 
             sizeof(server_addr) )) > 0))
@@ -82,7 +82,7 @@ void Network::send(unsigned char * data, int data_size) {
         n += 1;
         offset += (bytes_sent - NB_FLAG);
         remain -= (bytes_sent - NB_FLAG);
-        data[offset - NB_FLAG] = VIDEO << 14 | n;
+        data[offset - NB_FLAG] = VIDEO;
     }
 }
 

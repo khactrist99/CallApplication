@@ -25,9 +25,10 @@
 #include <algorithm>
 
 #define MAXLINE 1024
-#define NB_FLAG 2 // number of bytes for flag
-#define VIDEO 0
-#define END 3
+#define NB_FLAG 1 // number of bytes for flag
+#define VIDEO 254
+#define END 255
+
 class Network {
 public:
     Network();
