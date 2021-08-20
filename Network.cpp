@@ -50,31 +50,46 @@ void Network::Bind() {
 
 }
 
-void Network::recv(unsigned char * buffer, int buffer_size) {
+int Network::recv(unsigned char * data, int data_size) {
+    unsigned char buffer[MAXLINE];
     int offset = 0;
-    int remain = buffer_size;
+    int remain = data_size;
     int bytes_recv = 0;
-    while ((remain > 0) && ((bytes_recv = recvfrom(sockfd, buffer + offset, MAXLINE, 
-                MSG_WAITALL, (struct sockaddr *) &client_addr, &len)) > 0))
+    while ( (remain > 0) && ( ( bytes_recv = recvfrom(sockfd, buffer, 
+            std::min(remain + NB_FLAG, MAXLINE), MSG_WAITALL, (struct sockaddr *) &client_addr, 
+            &len) ) > 0 ) )
     {
-        // if (bytes_recv == 1) {
-        //     running = false;
-        //     printf("\n offset: %d, buffer value: %x stop recv.\n", offset, buffer[offset]);
-        //     break; 
-        // }  
-        offset += bytes_recv;
-        remain -= bytes_recv;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+        if (buffer[0] == END) {
+            return END; 
+        }
+        memcpy(data + offset, buffer + NB_FLAG, bytes_recv - NB_FLAG);         
+        offset += (bytes_recv - NB_FLAG);
+        remain -= (bytes_recv - NB_FLAG);                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+    }
+    return VIDEO;
+}
+
+void Network::send(unsigned char * data, int data_size) {
+    int bytes_sent = 0;
+    int offset = 0;
+    int remain = data_size;
+    int n = 0;
+    data[-NB_FLAG] = VIDEO << 14 | n; 
+    while ((remain > 0) && ((bytes_sent = sendto(sockfd, data + offset - NB_FLAG, 
+            std::min(remain + NB_FLAG, MAXLINE), MSG_CONFIRM, (struct sockaddr *) &server_addr, 
+            sizeof(server_addr) )) > 0))
+    {   
+        n += 1;
+        offset += (bytes_sent - NB_FLAG);
+        remain -= (bytes_sent - NB_FLAG);
+        data[offset - NB_FLAG] = VIDEO << 14 | n;
     }
 }
 
-void Network::send(unsigned char * buffer, int buffer_size) {
-    int bytes_sent = 0;
-    int offset = 0;
-    int remain = buffer_size;
-    while ((remain > 0) && ((bytes_sent = sendto(sockfd, buffer + offset, MAXLINE, 
-        MSG_CONFIRM, (struct sockaddr *) &server_addr, sizeof(server_addr) )) > 0))
-    {   
-        offset += bytes_sent;
-        remain -= bytes_sent;
+void Network::Close() {
+    unsigned char end_signal[NB_FLAG] = {END};
+    if (sendto(sockfd, end_signal, NB_FLAG, MSG_CONFIRM, (struct sockaddr *) &server_addr, 
+                sizeof(server_addr)) < 0) {
+        printf("Close Network error!");
     }
 }

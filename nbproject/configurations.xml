@@ -1,36 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configurationDescriptor version="100">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
-    <logicalFolder name="CallApplication"
-                   displayName="CallApplication"
-                   projectFiles="true">
-      <logicalFolder name=".vscode" displayName=".vscode" projectFiles="true">
-        <itemPath>.vscode/launch.json</itemPath>
-        <itemPath>.vscode/settings.json</itemPath>
-        <itemPath>.vscode/tasks.json</itemPath>
-      </logicalFolder>
-      <logicalFolder name="dist" displayName="dist" projectFiles="true">
-        <logicalFolder name="Debug" displayName="Debug" projectFiles="true">
-          <logicalFolder name="GNU-Linux" displayName="GNU-Linux" projectFiles="true">
-          </logicalFolder>
-        </logicalFolder>
-      </logicalFolder>
-      <itemPath>.dep.inc</itemPath>
-      <itemPath>.gitignore</itemPath>
-      <itemPath>Makefile</itemPath>
-      <itemPath>Network.cpp</itemPath>
-      <itemPath>Network.h</itemPath>
-      <itemPath>client</itemPath>
-      <itemPath>mediaPlayer.cpp</itemPath>
-      <itemPath>my_avutil.cpp</itemPath>
-      <itemPath>my_avutil.h</itemPath>
-      <itemPath>server</itemPath>
-    </logicalFolder>
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>Capture.h</itemPath>
-      <itemPath>Interface.h</itemPath>
+      <itemPath>Network.h</itemPath>
+      <itemPath>Render.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -40,7 +16,8 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>Capture.cpp</itemPath>
-      <itemPath>Interface.cpp</itemPath>
+      <itemPath>Network.cpp</itemPath>
+      <itemPath>Render.cpp</itemPath>
       <itemPath>client.cpp</itemPath>
       <itemPath>server.cpp</itemPath>
       <itemPath>video_player.cpp</itemPath>
@@ -81,41 +58,19 @@
       </toolsSet>
       <compileType>
       </compileType>
-      <item path=".dep.inc" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path=".gitignore" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path=".vscode/launch.json" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path=".vscode/settings.json" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path=".vscode/tasks.json" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="Capture.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Capture.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Interface.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Interface.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Makefile" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Network.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Network.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="client" ex="false" tool="3" flavor2="0">
+      <item path="Render.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Render.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="client.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="mediaPlayer.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="my_avutil.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="my_avutil.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="server" ex="false" tool="3" flavor2="0">
       </item>
       <item path="server.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -142,41 +97,19 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path=".dep.inc" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path=".gitignore" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path=".vscode/launch.json" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path=".vscode/settings.json" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path=".vscode/tasks.json" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="Capture.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Capture.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Interface.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Interface.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Makefile" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Network.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Network.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="client" ex="false" tool="3" flavor2="0">
+      <item path="Render.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Render.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="client.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="mediaPlayer.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="my_avutil.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="my_avutil.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="server" ex="false" tool="3" flavor2="0">
       </item>
       <item path="server.cpp" ex="false" tool="1" flavor2="0">
       </item>

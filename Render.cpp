@@ -11,7 +11,7 @@
  * Created on August 19, 2021, 2:47 PM
  */
 
-#include "Interface.h"
+#include "Render.h"
 
 Interface::Interface() {
 }
@@ -22,13 +22,13 @@ Interface::Interface(const Interface& orig) {
 Interface::~Interface() {
 }
 
-bool Interface::Init() {
+bool Interface::Init(const char * window_name) {
     if(SDL_Init(SDL_INIT_VIDEO)) {  
         printf( "Could not initialize SDL - %s\n", SDL_GetError()); 
         return false;
     } 
 
-    screen = SDL_CreateWindow("RECEIVER", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
+    screen = SDL_CreateWindow(window_name, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
                                 screen_w, screen_h,SDL_WINDOW_OPENGL|SDL_WINDOW_RESIZABLE);
     if(!screen) {  
         printf("SDL: could not create window - exiting:%s\n",SDL_GetError());  

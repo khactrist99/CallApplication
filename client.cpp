@@ -17,5 +17,6 @@ int main(int argc, char* argv[]) {
     {
         network.send(buffer, BUFFER_SIZE);
     }
+    network.Close();
     return 0;
 }

@@ -36,11 +36,9 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/Capture.o \
-	${OBJECTDIR}/Interface.o \
 	${OBJECTDIR}/Network.o \
+	${OBJECTDIR}/Render.o \
 	${OBJECTDIR}/client.o \
-	${OBJECTDIR}/mediaPlayer.o \
-	${OBJECTDIR}/my_avutil.o \
 	${OBJECTDIR}/server.o \
 	${OBJECTDIR}/video_player.o
 
@@ -74,30 +72,20 @@ ${OBJECTDIR}/Capture.o: Capture.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Capture.o Capture.cpp
 
-${OBJECTDIR}/Interface.o: Interface.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Interface.o Interface.cpp
-
 ${OBJECTDIR}/Network.o: Network.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Network.o Network.cpp
 
+${OBJECTDIR}/Render.o: Render.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Render.o Render.cpp
+
 ${OBJECTDIR}/client.o: client.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/client.o client.cpp
-
-${OBJECTDIR}/mediaPlayer.o: mediaPlayer.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/mediaPlayer.o mediaPlayer.cpp
-
-${OBJECTDIR}/my_avutil.o: my_avutil.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/my_avutil.o my_avutil.cpp
 
 ${OBJECTDIR}/server.o: server.cpp
 	${MKDIR} -p ${OBJECTDIR}

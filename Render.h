@@ -26,7 +26,7 @@ public:
 	Interface();
 	Interface(const Interface& orig);
 	virtual ~Interface();
-	bool Init();
+	bool Init(const char * window_name);
 	void Run();
 	void Render(unsigned char *);
 private:

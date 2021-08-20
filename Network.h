@@ -22,9 +22,12 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
+#include <algorithm>
 
 #define MAXLINE 1024
-
+#define NB_FLAG 2 // number of bytes for flag
+#define VIDEO 0
+#define END 3
 class Network {
 public:
     Network();
@@ -32,8 +35,9 @@ public:
     virtual ~Network();
     void Init();
     void Bind();
-    void recv(unsigned char * buffer, int data_size);
+    int recv(unsigned char * buffer, int data_size);
     void send(unsigned char * buffer, int data_size);
+    void Close();
 private:
     int port = 8080;
     int sockfd;
